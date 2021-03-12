@@ -7,7 +7,7 @@ Awesome AngularJS on the client
 
 Install node.js 
 App Server
-Our backend application server is a NodeJS application that relies upon some 3rd Party npm packages. You need to install these:
+The backend application server is a NodeJS application that relies upon some 3rd Party npm packages. You need to install these:
 nodemon, jquery:3.5.1, rxjs:~6.6.0
 npm install..
 cd..
