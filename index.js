@@ -1,0 +1,25 @@
+'use strict'
+
+var mongoose = require('mongoose');
+var app = require('./app');
+var port = 3700;
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/portfolio',
+  {
+    keepAlive: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  })
+  .then(() => {
+    console.log("Connected succesfully! go on!");
+
+    //create server
+    app.listen(port, () => {
+      console.log('server is running url: localhost:3700');
+    });
+
+
+  })
+  .catch(err => console.log(err));
