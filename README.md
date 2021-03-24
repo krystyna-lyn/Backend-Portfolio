@@ -16,4 +16,4 @@ cd..
 Configure Server
 The server stores its data in a MongoDB Compass database.
 
-Browse to the application at [http://localhost:3800]
+Run NodeJs [http://localhost:3800]
