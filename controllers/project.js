@@ -35,7 +35,7 @@ var controller = {
                 message: 'Error SaveProject'
             });
             if (!projectStored) return res.status(404).send({
-                message: 'cannot store the project'
+                message: 'Cannot store the project'
             });
 
             return res.status(200).send({ project: projectStored });
@@ -45,7 +45,7 @@ var controller = {
         var projectId = req.params.id;
 
         if (projectId == null) return res.status(404).send({
-            message: 'project doesnt exist'
+            message: 'Project doesnt exist'
         });
 
 
@@ -54,7 +54,7 @@ var controller = {
                 message: 'Error getData'
             });
             if (!project) return res.status(404).send({
-                message: 'project doesnt exist'
+                message: 'Project doesnt exist'
             });
             return res.status(200).send({ project });
         });
@@ -66,7 +66,7 @@ var controller = {
                 message: 'Error getData'
             });
             if (!projects) return res.status(404).send({
-                message: 'projects doesnt exist'
+                message: 'Projects doesnt exist'
             });
             return res.status(200).send({ projects });
         });
@@ -87,9 +87,9 @@ var controller = {
         var projectId = req.params.id;
 
         Project.findByIdAndRemove(projectId, (err, projectRemoved) => {
-            if (err) return res.status(500).send({ message: 'cannot delete the project' });
+            if (err) return res.status(500).send({ message: 'Cannot delete the project' });
 
-            if (!projectRemoved) return res.status(404).send({ message: "project not found and cant be deleted" });
+            if (!projectRemoved) return res.status(404).send({ message: "Project not found and cant be deleted" });
 
             return res.status(200).send({
                 project: projectRemoved
@@ -115,7 +115,7 @@ var controller = {
                 Project.findByIdAndUpdate(projectId, { image: fileName }, { new: true }, (err, projectUpdated) => {
 
                     if (err) return res.status(500).send({ messaage: 'cannot upload' });
-                    if (!projectUpdated) return res.status(404).send({ message: ' image doesnt exist' });
+                    if (!projectUpdated) return res.status(404).send({ message: 'Image doesnt exist' });
 
                     return res.status(200).send({
                         project: projectUpdated
@@ -123,7 +123,7 @@ var controller = {
                 });
             } else {
                 fs.unlink(filePath, (err) => {
-                    return res.status(500).send({ menssage: 'not valid' });
+                    return res.status(500).send({ menssage: 'Not valid' });
                 });
             }
         } else {
