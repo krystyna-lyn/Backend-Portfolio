@@ -1,2 +1,3 @@
 # Backend-Portfolio
-Backend for project Portfolio using JavaScript
+API REST (client Portffolio)
+Backend(JavaScript)
